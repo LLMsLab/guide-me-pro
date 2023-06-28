@@ -1,6 +1,60 @@
-# qa-app-lab
-A sandbox for developing question answering applications using real
-insurance chat data## Directory Structure
+# Large Language Model Project: Question-Answering System for Website
+
+This repository contains a Large Language Model project focused on building a
+Question-Answering System tailored for querying a specific website. The aim of
+this project is to develop an intelligent system that can understand user
+queries and provide relevant answers based on the content available on the
+website.
+
+## Project Overview
+
+The primary objective of this project is to leverage the power of large language
+models to create a robust Question-Answering System. By utilizing advanced
+techniques in natural language processing and machine learning, we aim to enable
+users to ask questions and obtain meaningful responses directly from the
+website.
+
+## Steps Involved
+
+To achieve our goal, we have broken down the project into the following key
+steps:
+
+1. **Web Scraping**: We will scrape the website's content, extracting webpages
+   and relevant information from the target website.
+
+2. **Embeddings Generation**: The extracted webpages will undergo an embeddings
+   generation process, where numerical representations capturing the semantic
+   meaning of the text will be created. These embeddings will allow us to
+   measure the similarity between user queries and the website content.
+
+3. **Query Processing**: When a user submits a query, we will generate
+   embeddings for the query text. This step ensures that both the query and the
+   website content are represented in a compatible format for comparison.
+
+4. **Comparison and Retrieval**: By comparing the embeddings of the user query
+   with the embeddings of the website content, we can identify the most
+   relevant webpages based on their semantic similarity. This process will
+   facilitate the retrieval of the most suitable information to answer the
+   user's query.
+
+5. **Context Injection**: Once we identify the most relevant webpage(s) based on
+   the query, we will inject the content of those webpages as context into the
+   prompt for the large language model. This contextual information will enable
+   the model to generate accurate and meaningful responses.
+
+6. **Response Generation**: With the context injected, the large language model
+   will process the user query along with the relevant webpage content to
+   generate a response. The response will provide the most relevant and
+   informative answer to the user's query.
+
+We believe that this project will greatly enhance the accessibility and
+usability of the website's information by providing users with an intuitive and
+efficient question-answering system. We invite you to explore the repository,
+contribute to its development, and witness the power of large language models
+in action.
+
+
+## Directory Structure
 
 ```text
 ├── README.md          <- The top-level README for developers using this project. It contains the project overview, setup instructions, and other necessary information.
