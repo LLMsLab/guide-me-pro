@@ -141,4 +141,7 @@ activate the virtual environment, and deactivate it when you're done.
 
 This guide assumes that you are using make commands which have been properly defined in a Makefile for creating and managing the Python virtual environment, installing dependencies, and making the `src` directory a Python package.
 
-If you aren't using a Makefile, replace the make commands with the corresponding Python commands provided in previous responses.
+If you aren't using a Makefile, replace the make commands with the
+corresponding Python commands provided in previous responses.
+
+> When you run the make command in the terminal, a menu is displayed that lists all the available options, from cleaning unused imports to creating a Python package, each associated with a specific command for easy management of your project workflow.
