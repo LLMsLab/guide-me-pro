@@ -80,3 +80,65 @@ the project.
 
 Thank you for considering contributing to our project. We look forward
 to working with you!
+
+Sure, here's the plain text version of the instruction:
+
+Sure, here's how you could update the instructions section with the additional information:
+
+## Instructions
+
+Before you begin, ensure you have installed Python 3. 
+
+To start working on the project, follow these steps:
+
+1. Clone the repository:
+
+```bash
+$ git clone https://github.com/your_username/your_repository.git
+$ cd your_repository
+```
+
+2. Create a Python virtual environment with venv:
+
+```bash
+$ make env_create
+```
+
+3. Depending on your operating system, activate the virtual environment using one of the following commands:
+
+On macOS:
+
+```bash
+$ make env_activate_macos
+```
+
+On Windows:
+
+```bash
+$ make env_activate_windows
+```
+
+4. Install dependencies from a requirements.txt:
+
+```bash
+$ make env_install
+```
+
+5. Make the `src` folder a Python package:
+
+```bash
+$ make src_package
+```
+
+6. You are now ready to start working on the project. When you're done, you can deactivate the virtual environment using the following command:
+
+```bash
+$ make env_deactivate
+```
+
+Remember, every time you want to work on the project, ensure you
+activate the virtual environment, and deactivate it when you're done.
+
+This guide assumes that you are using make commands which have been properly defined in a Makefile for creating and managing the Python virtual environment, installing dependencies, and making the `src` directory a Python package.
+
+If you aren't using a Makefile, replace the make commands with the corresponding Python commands provided in previous responses.

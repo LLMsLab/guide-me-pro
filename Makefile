@@ -11,11 +11,25 @@ env_req: # Create/updated requirements.txt using the imports
 	@mv ./requirements.txt ../.
 env_req_all: # Create/update requirements.txt using all packages
 	@pip freeze > requirements.txt
+env_create: # Create virtual environment
+	@python -m venv env
+env_activate_macos: # Activate virtual environment on macOS
+	@source env/bin/activate
+env_activate_windows: # Activate virtual environment on Windows
+	@.\env\Scripts\activate
+env_deactivate: # Deactivate virtual environment
+	@deactivate
 env_install: # Install dependencies from a requirements.txt
 	@pip install -r requirements.txt
 env_remove: # Remove project's virtual environment
 	@rm -fr ~/environments/data-science-life-cycle/
 
+#############################################################################
+### MAKE SRC A PYTHON PACKAGE
+#############################################################################
+src_package: # Make the src folder a Python package
+	@pip install -e .
+	
 #############################################################################
 ### USING PYTEST FOR TESTING
 #############################################################################
