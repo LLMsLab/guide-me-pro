@@ -9,12 +9,14 @@ from bs4 import BeautifulSoup
 
 
 class WebScraper:
-    """A class for web scraping using Python's requests and BeautifulSoup.
+    """A class for web scraping using Python's requests and
+    BeautifulSoup.
 
-    This class provides methods for scraping a list of URLs obtained from
-    a website's sitemap and saving scraped content to text files. It also
-    provides functionality to save a mapping between URLs and corresponding
-    text file names to a CSV file, and to save the URL list to a numpy file.
+    This class provides methods for scraping a list of URLs obtained
+    from a website's sitemap and saving scraped content to text files.
+    It also provides functionality to save a mapping between URLs and
+    corresponding text file names to a CSV file, and to save the URL
+    list to a numpy file.
 
     Methods
     -------
@@ -49,7 +51,8 @@ class WebScraper:
         urls = [
             url.find(loc_tag).text
             for url in urls
-            if url.find(loc_tag) is not None and "/search" not in url.find(loc_tag).text
+            if url.find(loc_tag) is not None
+            and "/search" not in url.find(loc_tag).text
         ]
 
         return urls
@@ -86,17 +89,17 @@ class WebScraper:
     def save_to_files(self, urls):
         """Save webpages to text files and create a mapping file.
 
-        This method scrapes each URL in the given list, saves the scraped
-        content to a text file, and adds the URL and corresponding file name
-        to a mapping. It then saves this mapping to a CSV file and the URL
-        list to a numpy file.
+        This method scrapes each URL in the given list, saves the
+        scraped content to a text file, and adds the URL and
+        corresponding file name to a mapping. It then saves this mapping
+        to a CSV file and the URL list to a numpy file.
 
         Parameters
         ----------
         urls : list
             The list of URLs to be scraped.
         """
-        np.save("url_list.npy", np.array(urls))
+        np.save("data/url_list.npy", np.array(urls))
 
         url_to_file_map = {}
 
@@ -107,6 +110,28 @@ class WebScraper:
                 print(f"Failed to scrape webpage: {url}, due to: {str(e)}")
                 continue
 
-            filename = f"webpage_{idx}.txt"
+            filename = f"data/webpage_{idx}.txt"
             try:
-                with open
+                with open(filename, "w", encoding="utf-8") as f:
+                    f.write(text)
+                print(f"Successfully wrote file: {filename}")
+
+                # Add the url and filename to the map
+                url_to_file_map[url] = filename
+            except Exception as e:
+                print(f"Failed to write file: {filename}, due to: {str(e)}")
+
+            # Add a delay between 3 to 7 seconds
+            time.sleep(random.randint(3, 7))
+
+        # Write the mapping to a CSV file
+        try:
+            with open(
+                "data/url_to_file_map.csv", "w", newline="", encoding="utf-8"
+            ) as f:
+                writer = csv.writer(f)
+                writer.writerow(["URL", "Document"])
+                for url, filename in url_to_file_map.items():
+                    writer.writerow([url, filename])
+        except Exception as e:
+            print(f"Failed to write URL to file map, due to: {str(e)}")
