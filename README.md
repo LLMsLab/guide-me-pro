@@ -144,4 +144,4 @@ This guide assumes that you are using make commands which have been properly def
 If you aren't using a Makefile, replace the make commands with the
 corresponding Python commands provided in previous responses.
 
-> When you run the make command in the terminal, a menu is displayed that lists all the available options, from cleaning unused imports to creating a Python package, each associated with a specific command for easy management of your project workflow.
+> When you run the `make` command in the terminal, a menu is displayed that lists all the available options, from cleaning unused imports to creating a Python package, each associated with a specific command for easy management of your project workflow.
