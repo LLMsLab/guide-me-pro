@@ -20,9 +20,11 @@ env_activate_windows: # Activate virtual environment on Windows
 env_deactivate: # Deactivate virtual environment
 	@deactivate
 env_install: # Install dependencies from a requirements.txt
+	@pip install --upgrade pip
 	@pip install -r requirements.txt
 env_remove: # Remove project's virtual environment
-	@rm -fr ~/environments/data-science-life-cycle/
+	@deactivate
+	@rm -rf env
 
 #############################################################################
 ### MAKE SRC A PYTHON PACKAGE
