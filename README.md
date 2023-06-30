@@ -1,8 +1,5 @@
 # Large Language Model Project: Question-Answering System for Website
 
-
-✅ your commentary
-
 This repository contains a Large Language Model project focused on building a
 Question-Answering System tailored for querying a specific website. The aim of
 this project is to develop an intelligent system that can understand user
