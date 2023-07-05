@@ -20,7 +20,7 @@ To achieve our goal, we have broken down the project into the following key
 steps:
 
 1. **Web Scraping**: We will scrape the website's content, extracting webpages
-   and relevant information from the target website.
+   and relevant information from the target website then upload them to AWS S3 bucket                                                                                
 
 2. **Embeddings Generation**: The extracted webpages will undergo an embeddings
    generation process, where numerical representations capturing the semantic
